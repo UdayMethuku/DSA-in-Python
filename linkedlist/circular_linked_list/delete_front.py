@@ -4,25 +4,24 @@ class Node:
         self.next=None
 
 def delete(last):
-    if last is None:
-        print("empty list")
+    if last==None:
         return None
     head=last.next
-    if head == last:
+    if head==last:
         last=None
     else:
-        last.next = head.next
+        last.next=head.next
     return last
 def print_list(last):
-    if last is None:
-        return
     head=last.next
     
     while True:
         print(head.data,end=" ")
-        if head==last.next:
-            break
         head=head.next
+        if head ==last.next:
+            break
+        
+        
 
 
 def main():
@@ -33,6 +32,7 @@ def main():
 
     last=head.next.next.next
     last.next=head
+    
     re=delete(last)
     print_list(re)
 main()
